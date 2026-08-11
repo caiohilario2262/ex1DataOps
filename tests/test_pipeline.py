@@ -1,6 +1,7 @@
 import pandas as pd
 import pytest
 
+from app.pipeline import create_annual_report
 from app.pipeline import run_pipeline
 
 
@@ -49,8 +50,6 @@ def test_creates_annual_report(tmp_path):
         "3,Carlos,150.0,2024-03-10\n",
         encoding="utf-8",
     )
-
-    from app.pipeline import create_annual_report
 
     create_annual_report(str(input_file), str(output_file))
 
