@@ -10,11 +10,9 @@ def test_pipeline_creates_summary_file(tmp_path):
     output_file = tmp_path / "summary.csv"
 
     input_file.write_text(
-        "order_id,customer,amount,date"
-        "1,Ana,100.0,2023-01-15"
-        "2,Bruno,250.0,2023-02-20"
-        "3,Carlos,150.0,2024-03-10"
-        "4,Ana,200.0,2024-04-05",
+        "order_id,customer,amount\n"
+        "1,Ana,100.0\n"
+        "2,Bruno,200.0\n",
         encoding="utf-8",
     )
 
