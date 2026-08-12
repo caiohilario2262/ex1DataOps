@@ -26,3 +26,12 @@ jobs:
 
       - name: Testes
         run: pytest
+
+      - name: Executar pipeline
+        run: python app/pipeline.py
+
+      - name: Upload do artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: summary
+          path: output/summary.csv
