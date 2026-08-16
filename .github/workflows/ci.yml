@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/esteira
+      - main
 
 jobs:
   validate:
@@ -35,3 +36,12 @@ jobs:
         with:
           name: summary
           path: output/summary.csv
+
+  deploy:
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: echo "Deploy realizado com sucesso!"
